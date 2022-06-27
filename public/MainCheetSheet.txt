@@ -1,0 +1,384 @@
+
+############################################################################################
+
+import React from "react";
+import styled from "styled-components";
+import {
+  FaTshirt,
+  FaMobileAlt,
+  FaStoreAlt,
+  FaLaptopMedical,
+  FaHome,
+  FaAppStore,
+  FaUserPlus,
+  FaSignInAlt,
+} from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/autoplay";
+import SwiperCore, { Autoplay } from "swiper";
+import {motion} from "framer-motion"
+SwiperCore.use([Autoplay]);
+
+const images = [
+  { id: "1", imageName: "1.jpg", tag: "fashion" },
+  { id: "2", imageName: "2.jpg", tag: "fashion" },
+  { id: "3", imageName: "3.jpg", tag: "fashion" },
+  { id: "4", imageName: "4.jpg", tag: "fashion" },
+  { id: "5", imageName: "5.jpg", tag: "fashion" },
+  { id: "6", imageName: "6.jpg", tag: "fashion" },
+  { id: "7", imageName: "7.jpg", tag: "fashion" },
+  { id: "8", imageName: "8.jpg", tag: "fashion" },
+  { id: "9", imageName: "9.jpg", tag: "fashion" },
+  { id: "10", imageName: "10.jpg", tag: "fashion" },
+  { id: "11", imageName: "11.jpg", tag: "fashion" },
+  { id: "12", imageName: "12.jpg", tag: "fashion" },
+  { id: "13", imageName: "13.jpg", tag: "fashion" },
+  { id: "14", imageName: "14.jpg", tag: "fashion" },
+  { id: "15", imageName: "15.jpg", tag: "fashion" },
+  { id: "16", imageName: "16.jpg", tag: "fashion" },
+  { id: "17", imageName: "17.jpg", tag: "fashion" },
+  { id: "18", imageName: "18.jpg", tag: "fashion" },
+  { id: "19", imageName: "19.jpg", tag: "fashion" },
+  { id: "20", imageName: "20.jpg", tag: "fashion" },
+  { id: "21", imageName: "21.jpg", tag: "fashion" },
+  { id: "22", imageName: "22.jpg", tag: "fashion" },
+  { id: "23", imageName: "23.jpg", tag: "fashion" },
+  { id: "24", imageName: "24.jpg", tag: "fashion" },
+  { id: "24", imageName: "25.jpg", tag: "fashion" },
+  { id: "26", imageName: "26.jpg", tag: "fashion" },
+  { id: "27", imageName: "27.jpg", tag: "fashion" },
+  { id: "28", imageName: "28.png", tag: "fashion" },
+  { id: "29", imageName: "29.jpg", tag: "fashion" },
+  { id: "30", imageName: "30.jpg", tag: "fashion" },
+  { id: "31", imageName: "31.jpg", tag: "fashion" },
+  { id: "32", imageName: "32.jpg", tag: "fashion" },
+  { id: "33", imageName: "33.jpg", tag: "fashion" },
+];
+
+function HomeSwiper() {
+  const StyledSwiper = styled.div`
+    width: 90vw;
+    height: 70vh;
+    background-color: rgb(243, 243, 243);
+    margin: auto;
+    display: flex;
+    align-items: flex-end;
+
+    .swiper{
+      width: 100%;
+      height: 100%;
+    }
+
+    .same-col {
+      width: 25vw;
+      background-color: white;
+      height: 96%;
+    }
+
+    .col-1 {
+      .col-header {
+        background-color: rgb(199, 192, 156);
+        font-size: 1.1rem;
+        padding: 10px 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-left: 5px;
+
+        li {
+          width: 100%;
+          padding: 10px 0;
+          border-radius: 10px;
+          transition: 0.2s ease-in;
+          cursor: pointer;
+
+          &:hover {
+            color: white;
+            background-color: orangered;
+          }
+        }
+      }
+    }
+
+    .col-2 {
+      width: 50vw;
+      background-color: inherit;
+      height: 96%;
+    }
+
+    .col-3 {
+      padding-top: 1rem;
+      p {
+        font-size: 14px;
+        font-weight: 550;
+
+        &:nth-of-type(1) {
+          padding-left: 5px;
+        }
+
+        &:nth-of-type(2) {
+          text-align: center;
+          margin-top: 5px;
+        }
+      }
+    }
+
+    .greeting__btns {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 1rem;
+
+      .btn {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 4%;
+        border-radius: 10px;
+        width: 35%;
+        display: flex;
+        font-size: 14px;
+      }
+      .login {
+        color: black;
+        border: 2px solid black;
+        &:hover {
+          color: white;
+          background-color: black;
+        }
+      }
+
+      .join {
+        color: white;
+        background-color: orangered;
+      }
+    }
+
+    @media screen and (max-width: 760px) {
+      .same-col {
+        display: none;
+      }
+
+      .col-2 {
+        width: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  `;
+  return (
+    <StyledSwiper>
+      <div className="col-1 same-col">
+        <p className="col-header">Categories</p>
+        <ul>
+          <li>
+            <FaTshirt />
+            Fashion
+          </li>
+          <li>
+            <FaStoreAlt />
+            Supermarket
+          </li>
+          <li>
+            <FaMobileAlt />
+            Phone & Assessories
+          </li>
+          <li>
+            <FaLaptopMedical />
+            Computers
+          </li>
+          <li>
+            <FaHome />
+            Home
+          </li>
+          <li>
+            <FaAppStore />
+            Others
+          </li>
+        </ul>
+      </div>
+      <div className="col-2">
+        <Swiper
+          style={{ paddingTop: "" }}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          loop
+        >
+          {images.map((image) => (
+            <SwiperSlide className="swiper__images">
+              <img
+                src={`/images/${image.imageName}`}
+                style={{ height: "100%", width: "100%" }}
+                alt={image.imageName}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <div className="col-3 same-col">
+        <p>Hi, cherished Customer </p>
+        <p>WELCOME TO NYANKIE </p>
+
+        <div className="greeting__btns">
+          <a href="#" className="btn login">
+            <FaSignInAlt /> Login
+          </a>
+          <a href="#" className="btn join">
+            <FaUserPlus /> Join
+          </a>
+        </div>
+        <div className="flash__details">
+        </div>
+      </div>
+    </StyledSwiper>
+  );
+}
+
+export default HomeSwiper;
+
+
+
+####################################################################################################
+
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+
+function MainComponent() {
+  const images = [
+    { id: "1", imageName: "1.jpg", tag: "technology" },
+    { id: "2", imageName: "2.jpg", tag: "technology" },
+    { id: "3", imageName: "3.jpg", tag: "technology" },
+    { id: "4", imageName: "4.jpg", tag: "fashion" },
+    { id: "5", imageName: "5.jpg", tag: "fashion" },
+    { id: "6", imageName: "6.jpg", tag: "home" },
+    { id: "7", imageName: "7.jpg", tag: "home" },
+    { id: "8", imageName: "8.jpg", tag: "fashion" },
+    { id: "9", imageName: "9.jpg", tag: "fashion" },
+    { id: "10", imageName: "10.jpg", tag: "technology" },
+    { id: "11", imageName: "11.jpg", tag: "home" },
+    { id: "12", imageName: "12.jpg", tag: "fashion" },
+    { id: "13", imageName: "13.jpg", tag: "fashion" },
+    { id: "14", imageName: "14.jpg", tag: "technology" },
+    { id: "15", imageName: "15.jpg", tag: "fashion" },
+    { id: "16", imageName: "16.jpg", tag: "home" },
+    { id: "17", imageName: "17.jpg", tag: "fashion" },
+    { id: "18", imageName: "18.jpg", tag: "fashion" },
+    { id: "19", imageName: "19.jpg", tag: "fashion" },
+    { id: "20", imageName: "20.jpg", tag: "technology" },
+    { id: "21", imageName: "21.jpg", tag: "fashion" },
+    { id: "22", imageName: "22.jpg", tag: "fashion" },
+    { id: "23", imageName: "23.jpg", tag: "technology" },
+    { id: "24", imageName: "24.jpg", tag: "home" },
+    { id: "24", imageName: "25.jpg", tag: "fashion" },
+    { id: "26", imageName: "26.jpg", tag: "fashion" },
+    { id: "27", imageName: "27.jpg", tag: "technology" },
+    { id: "28", imageName: "28.png", tag: "home" },
+    { id: "29", imageName: "29.jpg", tag: "fashion" },
+    { id: "30", imageName: "30.jpg", tag: "fashion" },
+    { id: "31", imageName: "31.jpg", tag: "home" },
+    { id: "32", imageName: "32.jpg", tag: "fashion" },
+    { id: "33", imageName: "33.jpg", tag: "technology" },
+  ];
+
+ 
+
+  const StyledProducts = styled.div`
+    width: 80vw;
+    height: fit-content;
+    padding: 2rem;
+    margin: 3rem auto;
+    background-color: white;
+
+    .products__header {
+      text-align: center;
+      h2 {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .tag__buttons {
+      width: 40%;
+      margin: auto;
+      display: flex;
+      justify-content: space-evenly;
+      gap: 1rem;
+
+      & > * {
+        border: 2px solid orangered;
+        background-color: white;
+        padding: 1vh 3vw;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 95%;
+
+        &:hover, &.active {
+          color: white;
+          background-color: orangered;
+        }
+      }
+    }
+    .images {
+      margin-top: 1rem !important;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      width: 90vw;
+      margin: auto;
+
+      img {
+        width: 100%;
+        height: 400px;
+      }
+    }
+  `;
+
+  const [tag, setTag] = useState("technology");
+  const [filteredImages, setFilteredImages] = useState([]);
+
+  useEffect(() => {
+    tag === "all"
+      ? setFilteredImages(images)
+      : setFilteredImages(images.filter((image) => image.tag === tag));
+  }, [tag]);
+
+  const name1 = "all";
+  const name2 = "fashion";
+  const name3 = "technology";
+  const name4 = "home";
+  return (
+    <StyledProducts>
+      <div className="products__header">
+        <h2>Our Products</h2>
+        <div className="tag__buttons">
+          <button onClick={()=>setTag(name1)} className={`${tag===name1 ? "active" : ""}`}>{name1.toUpperCase()}</button>
+          <button onClick={()=>setTag(name2)} className={`${tag===name2 ? "active" : ""}`}>{name2.toUpperCase()}</button>
+          <button onClick={()=>setTag(name3)} className={`${tag===name3 ? "active" : ""}`}>{name3.toUpperCase()}</button>
+          <button onClick={()=>setTag(name4)} className={`${tag===name4 ? "active" : ""}`}>{name4.toUpperCase()}</button>
+        </div>
+      </div>
+      <div className="images">
+        {filteredImages.map((image) => (
+          <div>
+            <img src={`/images/${image.imageName}`} alt={image.imageName} />
+          </div>
+        ))}
+      </div>
+    </StyledProducts>
+  );
+}
+
+export default MainComponent;
