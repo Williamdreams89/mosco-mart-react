@@ -6,7 +6,7 @@ function Hero() {
         width: 100vw;
         height: 500px;
         position: absolute;
-        margin-bottom: 10rem;
+        margin-bottom: 13rem;
         img{
             object-fit: cover;
             width: 100vw;
