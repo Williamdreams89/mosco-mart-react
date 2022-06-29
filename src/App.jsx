@@ -12,6 +12,7 @@ function App() {
         <HeaderTwo />
         < Hero />
         <ProductPage />
+        <div style={{height: "3rem"}}></div>
     </div>
   )
 }

@@ -11,6 +11,10 @@ ul{
 }
 
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 
 body{
   
